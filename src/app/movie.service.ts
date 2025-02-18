@@ -5,8 +5,8 @@ import { Movie } from './movie';
   providedIn: 'root'
 })
 export class MovieService {
-  // Corrected
-  private movies: Movie[] = [
+  // Grand Circus / Subsidiary of Dexian
+  private readonly movies: Movie[] = [ // ✅ Add `readonly`
     { title: "Toy Story", releaseYear: 1995 },
     { title: "Forrest Gump", releaseYear: 1994 }
   ];

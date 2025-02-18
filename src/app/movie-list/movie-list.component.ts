@@ -8,11 +8,11 @@ import { Movie } from '../movie';
   styleUrls: ['./movie-list.component.css']
 })
 export class MovieListComponent implements OnInit {
-  movies: Movie[] = [];
+  movies: Movie[] = []; // No read only
 
-  constructor(private movieService: MovieService) { }
+  constructor(private readonly movieService: MovieService) {} // ✅ Keep `readonly` on `movieService`
 
   ngOnInit(): void {
-    this.movies = this.movieService.getMovies();
+    this.movies = this.movieService.getMovies(); // ✅ Now reassignment works
   }
 }
