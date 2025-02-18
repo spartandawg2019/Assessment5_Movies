@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { MovieService } from '../movie.service';
-import { Movie } from '../movie';
+import { Movie } from '../movie';  //  No extra folders
+import { MovieService } from '../movie.service';  //  No extra folders
 
 @Component({
-  selector: 'app-movie-list',  // ✅ Ensure this matches app.component.html
+  selector: 'app-movie-list',
   templateUrl: './movie-list.component.html',
   styleUrls: ['./movie-list.component.css']
 })
 export class MovieListComponent implements OnInit {
-  movies: Movie[] = []; // No read only
+  movies: Movie[] = [];
 
-  constructor(private readonly movieService: MovieService) {} // ✅ Keep `readonly` on `movieService`
+  constructor(private movieService: MovieService) {}
 
   ngOnInit(): void {
-    this.movies = this.movieService.getMovies(); // ✅ Now reassignment works
+    this.movies = this.movieService.getMovies();
   }
 }
